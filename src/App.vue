@@ -27,12 +27,11 @@ html {
   font: 62.5%;
   box-sizing: border-box;
 }
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-  }
-
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 body {
   font-size: 1.6rem;
   font-family: "Lato", sans-serif;
