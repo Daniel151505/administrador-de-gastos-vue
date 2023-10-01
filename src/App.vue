@@ -1,11 +1,15 @@
 <script setup>
 import FiltroVue from "./components/Filtro.vue";
+import PresupuestoVue from "./components/Presupuesto.vue";
 </script>
 
 <template>
   <div>
     <header>
       <h1>Planificador de Gastos</h1>
+      <div class="contenedor-header contenedor sombra">
+        <PresupuestoVue />
+      </div>
     </header>
   </div>
 </template>
@@ -20,12 +24,15 @@ import FiltroVue from "./components/Filtro.vue";
   --negro: #000;
 }
 html {
+  font: 62.5%;
+  box-sizing: border-box;
+}
   *,
   *:before,
   *:after {
     box-sizing: inherit;
   }
-}
+
 body {
   font-size: 1.6rem;
   font-family: "Lato", sans-serif;
@@ -45,5 +52,21 @@ header h1 {
   margin: 0;
   color: var(--blanco);
   text-align: center;
+}
+.contenedor {
+  width: 90%;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+.contenedor-header {
+  margin-top: -5rem;
+  transform: translateY(5rem);
+  padding: 5rem;
+}
+.sombra {
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  background-color: var(--blanco);
+  border-radius: 1.2rem;
+  padding: 5rem;
 }
 </style>
