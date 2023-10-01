@@ -4,9 +4,11 @@ import PresupuestoVue from "./components/Presupuesto.vue";
 import ControlPresupuestoVue from "./components/ControlPresupuesto.vue";
 
 const presupuesto = ref(0);
+const disponible = ref(0);
 
 const definirPresupuesto = (cantidad) => {
   presupuesto.value = cantidad;
+  disponible.value = cantidad;
 };
 </script>
 
@@ -19,7 +21,11 @@ const definirPresupuesto = (cantidad) => {
           v-if="presupuesto === 0"
           @definir-presupuesto="definirPresupuesto"
         />
-        <ControlPresupuestoVue v-else />
+        <ControlPresupuestoVue
+          v-else
+          :presupuesto="presupuesto"
+          :disponible="disponible"
+        />
       </div>
     </header>
   </div>
