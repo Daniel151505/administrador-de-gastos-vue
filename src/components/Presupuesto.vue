@@ -7,12 +7,12 @@ const error = ref("");
 const emit = defineEmits(["definir-presupuesto"]);
 
 const definirPresupuesto = () => {
-  if (presupuesto.value <= 0) {
+  if (presupuesto.value <= 0 || presupuesto.value === "") {
     error.value = "Presupuesto no válido";
-
     setTimeout(() => {
       error.value = "";
     }, 3000);
+    return;
   }
   emit("definir-presupuesto", presupuesto.value);
 };
