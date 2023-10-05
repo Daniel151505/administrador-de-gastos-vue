@@ -49,6 +49,17 @@ const guardarGasto = () => {
     ...gasto,
     id: generarId(),
   });
+
+  ocultarModal();
+
+  // Reiniciar el objeto
+  Object.assign(gasto , {
+    nombre: "",
+    cantidad: "",
+    categoria: "",
+    id: null,
+    fecha: Date.now()
+  })
 };
 </script>
 
