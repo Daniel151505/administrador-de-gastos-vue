@@ -173,10 +173,10 @@ header h1 {
   cursor: pointer;
 }
 
-.listados-gastos {
+.listado-gastos {
   margin-top: 10rem;
 }
-.listados-gastos h2 {
+.listado-gastos h2 {
   font-weight: 900;
   color: var(--gris-oscuro);
 }
