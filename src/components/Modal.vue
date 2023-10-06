@@ -148,14 +148,14 @@ const agregarGasto = () => {
 }
 
 .nuevo-gasto {
-  margin: 10rem auto 0 auto;
+  margin: 7rem auto 0 auto;
   display: grid;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 .nuevo-gasto legend {
   text-align: center;
   color: var(--blanco);
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 700;
 }
 .campo {
@@ -172,7 +172,7 @@ const agregarGasto = () => {
 }
 .nuevo-gasto label {
   color: var(--blanco);
-  font-size: 3rem;
+  font-size: 1.5rem;
 }
 .nuevo-gasto input[type="submit"] {
   background-color: var(--azul);
