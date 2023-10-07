@@ -36,6 +36,8 @@ watch(
     );
     gastado.value = totalGastado;
     disponible.value = presupuesto.value - totalGastado;
+
+    localStorage.setItem("gastos", JSON.stringify(gastos.valur));
   },
   {
     deep: true,
@@ -64,6 +66,11 @@ onMounted(() => {
   if (presupuestoStorage) {
     presupuesto.value = Number(presupuestoStorage);
     disponible.value = Number(presupuestoStorage);
+  }
+
+  const gastosStorage = localStorage.getItem("gastos");
+  if (gastosStorage) {
+    gastos.value = JSON.parse(gastosStorage);
   }
 });
 
