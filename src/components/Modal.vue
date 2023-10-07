@@ -11,6 +11,7 @@ const emit = defineEmits([
   "update:nombre",
   "update:cantidad",
   "update:categoria",
+  "eliminar-gasto",
 ]);
 const props = defineProps({
   modal: {
@@ -149,7 +150,14 @@ const isEditing = computed(() => {
           :value="[isEditing ? 'Guardar Cambios' : 'Añadir Gasto']"
         />
       </form>
-      <button type="button" class="btn-eliminar" v-if="isEditing">Eliminar</button>
+      <button
+        type="button"
+        class="btn-eliminar"
+        v-if="isEditing"
+        @click="$emit('eliminar-gasto')"
+      >
+        Eliminar
+      </button>
     </div>
   </div>
 </template>
