@@ -1,5 +1,5 @@
 <script setup>
-import { ref, reactive, watch, computed } from "vue";
+import { ref, reactive, watch, computed, onMounted } from "vue";
 import PresupuestoVue from "./components/Presupuesto.vue";
 import ControlPresupuestoVue from "./components/ControlPresupuesto.vue";
 import ModalVue from "./components/Modal.vue";
@@ -54,6 +54,18 @@ watch(
     deep: true,
   }
 );
+
+watch(presupuesto, () => {
+  localStorage.setItem("presupuesto", presupuesto.value);
+});
+
+onMounted(() => {
+  const presupuestoStorage = localStorage.getItem("presupuesto");
+  if (presupuestoStorage) {
+    presupuesto.value = Number(presupuestoStorage);
+    disponible.value = Number(presupuestoStorage);
+  }
+});
 
 const reiniciarStateGasto = () => {
   // Reiniciar el objeto
