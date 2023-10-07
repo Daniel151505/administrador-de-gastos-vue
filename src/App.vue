@@ -133,7 +133,7 @@ const seleccionarGasto = (id) => {
 };
 
 const eliminarGasto = () => {
-  if (confirm("Eliminar?")) {
+  if (confirm("¿Desear eliminar el gasto?")) {
     gastos.value = gastos.value.filter(
       (gastoState) => gastoState.id !== gasto.id
     );
@@ -147,6 +147,13 @@ const gastosFiltrados = computed(() => {
   }
   return gastos.value;
 });
+
+const resetApp = () => {
+  if (confirm("¿Deseas reiniciar presupuesto y gastos?")) {
+    gastos.value = [];
+    presupuesto.value = 0;
+  }
+};
 </script>
 
 <template>
@@ -163,6 +170,7 @@ const gastosFiltrados = computed(() => {
           :presupuesto="presupuesto"
           :disponible="disponible"
           :gastado="gastado"
+          @reset-app="resetApp"
         />
       </div>
     </header>
