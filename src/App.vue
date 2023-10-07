@@ -37,7 +37,7 @@ watch(
     gastado.value = totalGastado;
     disponible.value = presupuesto.value - totalGastado;
 
-    localStorage.setItem("gastos", JSON.stringify(gastos.valur));
+    localStorage.setItem("gastos", JSON.stringify(gastos.value));
   },
   {
     deep: true,
