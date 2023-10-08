@@ -176,7 +176,7 @@ const resetApp = () => {
     </header>
 
     <main v-if="presupuesto > 0">
-      <FiltrosVue v-model:filtro="filtro" />
+      <FiltrosVue v-model:filtro="filtro" v-if="gastosFiltrados.length > 0"/>
       <div class="listado-gastos contenedor">
         <h2>{{ gastosFiltrados.length > 0 ? "Gastos" : "No hay gastos" }}</h2>
         <GastoVue
@@ -281,10 +281,11 @@ header h1 {
 }
 
 .listado-gastos {
-  margin-top: 10rem;
+  margin-top: 8rem;
 }
 .listado-gastos h2 {
   font-weight: 900;
   color: var(--gris-oscuro);
+  text-align: center;
 }
 </style>

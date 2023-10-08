@@ -150,7 +150,8 @@ const isEditing = computed(() => {
           :value="[isEditing ? 'Guardar Cambios' : 'Añadir Gasto']"
         />
       </form>
-      <button
+      <div class="pt-1">
+              <button
         type="button"
         class="btn-eliminar"
         v-if="isEditing"
@@ -158,11 +159,14 @@ const isEditing = computed(() => {
       >
         Eliminar
       </button>
+      </div>
+
     </div>
   </div>
 </template>
 
 <style scoped>
+/* Estilos generales */
 .modal {
   position: absolute;
   background-color: rgb(0 0 0 / 0.9);
@@ -174,14 +178,15 @@ const isEditing = computed(() => {
 
 .cerrar-modal {
   position: absolute;
-  right: 3rem;
-  top: 3rem;
+  right: 1rem; 
+  top: 1rem;
 }
 .cerrar-modal img {
-  width: 3rem;
+  width: 2rem;
   cursor: pointer;
 }
 
+/* Estilos para el formulario */
 .contenedor-formulario {
   transition-property: all;
   transition-duration: 300ms;
@@ -195,20 +200,21 @@ const isEditing = computed(() => {
   opacity: 0;
 }
 
+/* Estilos para el formulario de nuevo gasto */
 .nuevo-gasto {
-  margin: 7rem auto 0 auto;
+  margin: 1rem auto 0 auto; 
   display: grid;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 .nuevo-gasto legend {
   text-align: center;
   color: var(--blanco);
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 700;
 }
 .campo {
   display: grid;
-  gap: 2rem;
+  gap: 1rem;
 }
 .nuevo-gasto input,
 .nuevo-gasto select {
@@ -216,11 +222,11 @@ const isEditing = computed(() => {
   border-radius: 1rem;
   padding: 1rem;
   border: none;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
 }
 .nuevo-gasto label {
   color: var(--blanco);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 .nuevo-gasto input[type="submit"] {
   background-color: var(--azul);
@@ -229,15 +235,59 @@ const isEditing = computed(() => {
   cursor: pointer;
 }
 
+/* Estilos para el botón de eliminar */
 .btn-eliminar {
-  border: none;
-  padding: 1rem;
-  width: 100%;
   background-color: #ef4444;
-  font-weight: 700;
-  font-size: 1.2rem;
   color: var(--blanco);
-  margin-top: 10rem;
+  font-weight: 700;
   cursor: pointer;
+  border-radius: 1rem;
+  padding: 1rem;
+  border: none;
+  font-size: 1.8rem;
+  width: 100%;
 }
+
+.pt-1 {
+  padding-top: 1rem;
+}
+
+/* Media Query para dispositivos de pantalla más pequeños*/
+@media (max-width: 375px) {
+  .modal {
+    position: fixed; /* Cambiar a posición fija en pantallas pequeñas */
+  }
+
+  .cerrar-modal {
+    right: 0.5rem; /* Ajustar el espacio desde la derecha */
+    top: 0.5rem; /* Ajustar el espacio desde la parte superior */
+  }
+
+  .cerrar-modal img {
+    width: 1.5rem; /* Reducir el tamaño del icono de cierre */
+  }
+
+  .nuevo-gasto {
+    margin-top: 1rem; /* Ajustar el margen */
+  }
+
+  .nuevo-gasto legend {
+    font-size: 1.4rem; /* Reducir el tamaño de la fuente */
+  }
+
+  .nuevo-gasto input,
+  .nuevo-gasto select {
+    font-size: 1.6rem; /* Reducir el tamaño de la fuente */
+  }
+
+  .nuevo-gasto label {
+    font-size: 1.2rem; /* Reducir el tamaño de la fuente */
+  }
+
+  .btn-eliminar {
+    margin-top: 0.5rem; /* Ajustar el margen */
+  }
+}
+
+
 </style>

@@ -41,6 +41,8 @@ const definirPresupuesto = () => {
 <style scoped>
 .presupuesto {
   width: 100%;
+  max-width: 400px; /* Limitar el ancho máximo para evitar que sea demasiado ancho en pantallas grandes */
+  margin: 0 auto; /* Centrar el contenido horizontalmente */
 }
 .campo {
   display: grid;
@@ -50,6 +52,7 @@ const definirPresupuesto = () => {
   font-size: 2.2rem;
   text-align: center;
   color: var(--azul);
+  width: 100%; /* El label ocupará todo el ancho disponible */
 }
 .presupuesto input[type="number"] {
   background-color: var(--gris-claro);
@@ -58,6 +61,7 @@ const definirPresupuesto = () => {
   border: none;
   font-size: 2.2rem;
   text-align: center;
+  width: 100%; /* El input ocupará todo el ancho disponible */
 }
 .presupuesto input[type="submit"] {
   background-color: var(--azul);
@@ -68,11 +72,22 @@ const definirPresupuesto = () => {
   margin-top: 2rem;
   color: var(--blanco);
   font-weight: 900;
-  width: 100%;
+  width: 100%; /* El botón ocupará todo el ancho disponible */
   transition: background-color 300ms ease;
 }
 .presupuesto input[type="submit"]:hover {
   background-color: #1048a4;
   cursor: pointer;
+}
+/* Media Query para dispositivos de pantalla más pequeños */
+@media screen and (max-width: 768px) {
+  .presupuesto label,
+  .presupuesto input[type="submit"] {
+    font-size: 0.9rem; /* Reducir el tamaño de la fuente en pantallas más pequeñas */
+  }
+
+  .presupuesto input[type="number"] {
+    font-size: 1.6rem; /* Reducir el tamaño de la fuente en pantallas más pequeñas */
+  }
 }
 </style>

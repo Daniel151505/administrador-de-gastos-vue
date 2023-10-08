@@ -27,19 +27,25 @@ defineEmits(["update:filtro"]);
 </template>
 
 <style scoped>
+/* Estilos generales */
 .filtros {
   margin-top: 10rem;
 }
+
 .filtros .campo {
   display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en filas en pantallas pequeñas */
   align-items: center;
   gap: 2rem;
+  text-align: center;
 }
+
 .filtros label {
   font-size: 3rem;
   font-weight: 900;
   color: var(--gris-oscuro);
 }
+
 .filtros select {
   flex: 1;
   padding: 1rem;
@@ -47,5 +53,21 @@ defineEmits(["update:filtro"]);
   border-radius: 1rem;
   background-color: var(--gris-claro);
   text-align: center;
+}
+
+/* Media Query para dispositivos de pantalla más pequeños */
+@media (max-width: 768px) {
+  .filtros .campo {
+    flex-direction: column; /* Cambia la dirección de flexión en pantallas pequeñas */
+  }
+
+  .filtros select {
+    width: 100%; /* Ocupa todo el ancho disponible en pantallas pequeñas */
+    margin-top: 1rem; /* Añade un margen superior para separar los elementos */
+  }
+
+  .filtros label {
+    font-size: 2rem; /* Reducir el tamaño de la fuente en pantallas pequeñas */
+  }
 }
 </style>
