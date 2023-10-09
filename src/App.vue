@@ -176,7 +176,7 @@ const resetApp = () => {
     </header>
 
     <main v-if="presupuesto > 0">
-      <FiltrosVue v-model:filtro="filtro" v-if="gastosFiltrados.length > 0"/>
+      <FiltrosVue v-model:filtro="filtro" v-if="gastos.length > 0"/>
       <div class="listado-gastos contenedor">
         <h2>{{ gastosFiltrados.length > 0 ? "Gastos" : "No hay gastos" }}</h2>
         <GastoVue
